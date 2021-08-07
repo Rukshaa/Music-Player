@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".dashboard.DashboardActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <FrameLayout
+                android:id="@+id/frame_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="120dp"
+                android:background="@color/black"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/navigation"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:focusable="false"
+                android:theme="@style/NavigationDrawerStyle"
+                app:itemBackground="@color/black"
+                app:itemIconSize="18dp"
+                app:itemIconTint="@drawable/bottomnavigation_icon_selected"
+                app:itemTextColor="@drawable/bottomnavigation_icon_selected"
+                app:labelVisibilityMode="labeled"
+                app:menu="@menu/navigation" />
+
+            <LinearLayout
+                android:id="@+id/playingSong"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="-45dp"
+                android:orientation="vertical"
+                app:layout_behavior=".dashboard.LockableBottomSheetBehavior">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardMusic"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        app:cardBackgroundColor="#333333"
+                        app:cardCornerRadius="0dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/americaImg"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="32dp"
+                                android:layout_marginLeft="32dp"
+                                android:src="@drawable/rectangles" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginLeft="20dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/songTitleView"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/titleText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:fontFamily="@font/interbold"
+                                        android:text="Slow Dancing In A B..."
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp" />
+
+                                    <TextView
+                                        android:id="@+id/subText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="3dp"
+                                        android:fontFamily="@font/interregular"
+                                        android:text="John Mayer"
+                                        android:textColor="@color/dark_grey"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="70dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginEnd="32dp"
+                                    android:layout_marginRight="32dp">
+
+                                    <ImageView
+                                        android:id="@+id/playImage"
+                                        android:layout_width="18dp"
+                                        android:layout_height="18dp"
+
+                                        android:src="@drawable/ic_play1" />
+
+                                    <ImageView
+                                        android:id="@+id/nextPlay"
+                                        android:layout_width="18dp"
+                                        android:layout_height="18dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_alignParentRight="true"
+                                        android:src="@drawable/playforward1" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:layout_marginTop="59dp"
+                        android:background="#D0FFFFFF" />
+                </RelativeLayout>
+
+                <!--            <LinearLayout-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="match_parent"-->
+                <!--                android:orientation="vertical">-->
+
+                <!--                <com.sothree.slidinguppanel.SlidingUpPanelLayout-->
+                <!--                    android:id="@+id/sliding_layout"-->
+                <!--                    android:visibility="gone"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="50dp"-->
+                <!--                    android:gravity="bottom"-->
+                <!--                   >-->
+
+                <!--                    <TextView-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:gravity="center"-->
+                <!--                        android:text="Main Content"-->
+                <!--                        android:textSize="16sp" />-->
+
+                <!--                    <TextView-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:gravity="center|top"-->
+                <!--                        android:text="The Awesome Sliding Up Panel"-->
+                <!--                        android:textSize="16sp" />-->
+                <!--                </com.sothree.slidinguppanel.SlidingUpPanelLayout>-->
+
+                <!--            </LinearLayout>-->
+
+
+            </LinearLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </LinearLayout>
+</layout>
